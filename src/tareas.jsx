@@ -56,19 +56,16 @@ function ListaTareas() {
 
   };
 
-  const q = query(collection(db, 'tasks'), orderBy('created', 'desc'))
+
+  useEffect(() => {
+     const q = query(collection(db, "tasks"));
   const obtenertareas = onSnapshot(q, (querySnapshot) => {
     const documentos = [];
     querySnapshot.forEach((doc) => {
       documentos.push({ ...doc.data(), id: doc.id });
     });
     setTareas(documentos);
-  });  
-
-
-
-  useEffect(() => {
-    obtenertareas();
+  })
   }, []);
     
   const borrartarea= id=>
