@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './estilos.css'
+import './firebase.js';
+import 'bootswatch/dist/lux/bootstrap.min.css';
+import ListaTareas from './tareas';
+import 'boxicons/css/boxicons.min.css';
+import 'sweetalert2/dist/sweetalert2.all.min.js'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <ListaTareas></ListaTareas>
   </React.StrictMode>
 );
 
