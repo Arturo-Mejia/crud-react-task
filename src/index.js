@@ -4,6 +4,7 @@ import './estilos.css'
 import './firebase.js';
 import 'bootswatch/dist/lux/bootstrap.min.css';
 import ListaTareas from './tareas';
+import Formulario from "./Formulario";
 import 'boxicons/css/boxicons.min.css';
 import 'sweetalert2/dist/sweetalert2.all.min.js'
 import reportWebVitals from './reportWebVitals';
@@ -11,7 +12,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <ListaTareas></ListaTareas>
+     <ListaTareas>
+      <Formulario></Formulario>
+     </ListaTareas>
   </React.StrictMode>
 );
 

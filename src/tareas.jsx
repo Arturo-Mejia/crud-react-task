@@ -56,14 +56,16 @@ function ListaTareas() {
 
   };
 
-  const q = query(collection(db, "tasks"));
+  const q = query(collection(db, 'tasks'), orderBy('created', 'desc'))
   const obtenertareas = onSnapshot(q, (querySnapshot) => {
     const documentos = [];
     querySnapshot.forEach((doc) => {
       documentos.push({ ...doc.data(), id: doc.id });
     });
     setTareas(documentos);
-  });
+  });  
+
+
 
   useEffect(() => {
     obtenertareas();
@@ -95,7 +97,7 @@ function ListaTareas() {
     <div>
       <Formulario {...{addoredit,idactual,tareas}}></Formulario>
       <h1 className="text-center m-5">Lista de tareas</h1>
-
+        <h1>{tareas.length}</h1>
       <div className="contenedor d-flex flex-row flex-wrap">
         {tareas.map((tarea) => (
           <div className="card cardw m-4 p-3 div-shadow rounded-2 d-flex justify-content-around" key={tarea.id}>
